@@ -34,8 +34,7 @@ The following videos are simulated using gazebo. They represent the case how the
 
 structure of 2 robots | structure of 3 robots | strucutre of 4 robots
 :-: | :-: | :-:
-<video controls="true" src='doc/Simulation2Roboter.mp4' type="video/mp4" width=500/> | <video controls="true" src='doc/Simulation3Roboter.mp4' type="video/mp4" width=500/> | <video controls="true" src='doc/compres_4Robots_12Objects_scheduling_d012_colors_trays.mp4' type="video/mp4" width=500/>
-
+<video src="doc/Simulation2Roboter.mp4" controls title="Title"></video> | <video src="doc/Simulation3Roboter.mp4" controls title="Title"></video> | <video src="doc/Simulation4Roboter.mp4" controls title="Title"></video>
 
 #### Hannover Messe 2023
 The KoKoBot has participated in the Hannover messe that took place in April 2023 in Hannover, Germany. The following video shows the diassembly process of the 3 trucks with two UR5e robots.
@@ -55,7 +54,7 @@ KoKoBot's documentation and information is available at [WSKL-Website](https://m
 
 - Ubuntu: 20.04 (preferred). 
 - ROS: [Noetic](http://wiki.ros.org/noetic/Installation/Ubuntu)
-- Universal robot gazebo simulation: [universal_robot/fmauch](https://github.com/fmauch/universal_robot)
+- Universal robot gazebo simulation: [universal_robot](https://github.com/dhled/universal_robot)
 - Universal Robots ROS drivers (necessary for the Hardware): [Universal_Robots_ROS_Driver](https://github.com/UniversalRobots/Universal_Robots_ROS_Driver).
 - Robotiq 2f-85 gripper: [robotiq](https://github.com/ros-industrial/robotiq/tree/kinetic-devel)
 - Inverse Kinematics for Universal robots e-series: [ur_ikfast](https://github.com/cambel/ur_ikfast)
@@ -198,3 +197,5 @@ Source code is licensed under the MIT License. You may obtain a
 copy of the License at https://opensource.org/license/mit/
 
 This repository is maintained by [Nigora Gafur](https://github.com/ngafur) &  [Khalil Abuibaid](https://github.com/abuibaid).
+
+
