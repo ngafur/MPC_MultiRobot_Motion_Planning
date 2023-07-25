@@ -11,7 +11,7 @@
   </a>
 </p>
 
-## Introdcution
+## Introduction
 
 **KoKoBot** stands for Cooperative and Collaborative Robotplatform.  KoKoBot automates optimal task planning, online trajectory planning, and collision avoidance for robots operating in dynamic surroundings, creating a safe and collaborative workplace for both robots and humans. By embracing KoKoBot, industries can unlock a new level of operational efficiency and safety, enabling optimal task execution, collision-free navigation, and harmonious collaboration between robots and human workers. The integration of the robot operating system (ROS) further enhances KoKoBot’s communication, performance and adaptability.
 
