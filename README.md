@@ -33,16 +33,21 @@ The system possesses the ability to dynamically adapt and adjust trajectories in
 
 The following videos are simulated using gazebo. They represent the case how the algorithm can be expanded to larger system and two more number of robots. They are picking, sorting and placing the objects.
 
-structure of 2 robots | structure of 3 robots | strucutre of 4 robots
-:-: | :-: | :-:
-<video src="doc/Simulation2Roboter.mp4" controls title="Title"></video> | <video src="doc/Simulation3Roboter.mp4" controls title="Title"></video> | <video src="doc/Simulation4Roboter.mp4" controls title="Title"></video>
+##### Structure of 2 robots
 
+<video src=https://github.com/ngafur/kokobot_OS/assets/22854439/9a97604a-c7c2-4875-a344-9963936be640 controls title="Title"></video>
+
+##### Structure of 3 robots 
+ <video src=https://github.com/ngafur/kokobot_OS/assets/22854439/2f891aa2-a743-418d-aa5c-d477991fc381  controls title="Title"></video> 
+
+##### Strucutre of 4 robots
+ <video src=https://github.com/ngafur/kokobot_OS/assets/22854439/a190099c-a30f-4dca-8485-840cd3b8308f controls title="Title"></video>
 
 #### Hannover Messe 2023
 The KoKoBot has participated in the Hannover messe that took place in April 2023 in Hannover, Germany. The following video shows the diassembly process of the 3 trucks with two UR5e robots.
 
 <p align="center">
-<video controls="true" src='doc/first_use_case.mp4' type="video/mp4" width=500/>
+<video controls="true" src= https://github.com/ngafur/kokobot_OS/assets/22854439/86b74124-463c-4f2c-bdc6-53f02c361a46 type="video/mp4" width=500/>
 </p>
 
 ## Documentation
