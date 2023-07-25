@@ -26,6 +26,8 @@ The system possesses the ability to dynamically adapt and adjust trajectories in
    <img alt="control_structure" src="doc/control_structure_2.png" width="60%"/>
 </p>
 
+https://github.com/ngafur/kokobot_OS/blob/65556fafae0267592ffeeebd46ca398150a4a7ac/doc/Simulation2Roboter.mp4
+
 ### Videos
 
 #### Simulation
