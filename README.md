@@ -37,6 +37,7 @@ structure of 2 robots | structure of 3 robots | strucutre of 4 robots
 :-: | :-: | :-:
 <video src="doc/Simulation2Roboter.mp4" controls title="Title"></video> | <video src="doc/Simulation3Roboter.mp4" controls title="Title"></video> | <video src="doc/Simulation4Roboter.mp4" controls title="Title"></video>
 
+![Logo_Kokobot_1021_Final](https://github.com/ngafur/kokobot_OS/assets/22854439/07dc6ae8-9dcb-4a16-bd67-796ed3b07b60)
 
 #### Hannover Messe 2023
 The KoKoBot has participated in the Hannover messe that took place in April 2023 in Hannover, Germany. The following video shows the diassembly process of the 3 trucks with two UR5e robots.
