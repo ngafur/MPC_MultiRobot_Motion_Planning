@@ -1,0 +1,256 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="default">
+    <scene>
+      <ambient>180 180 180 255</ambient> 
+      <background> 180 180 180 255</background>
+      <shadows>0</shadows>
+    </scene> 
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <gravity>0 0 -9.8</gravity>
+    </physics>
+    <!-- A global light source -->
+    <!--<include>
+      <uri>model://sun</uri>
+    </include> -->
+    <!-- A ground plane -->
+     <!--<include>
+      <uri>model://ground_plane</uri>
+    </include>  -->
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose> -3.450350 3.596557 2.115550 0.000000 0.271643 -0.759808 </pose>
+        <view_controller>orbit</view_controller>
+      </camera>
+    </gui>
+    
+    
+        <!-- Add a ground plane -->
+      <model name="ground_plane">
+            <static>true</static>
+            <link name="link">
+                <collision name="collision">
+                    <geometry>
+                        <plane>
+                            <normal>0 0 1</normal>
+                            <size>150 150</size>
+                        </plane>
+                    </geometry>
+                </collision>
+                <visual name="visual">
+                    <geometry>
+                        <plane>
+                            <normal>0 0 1</normal>
+                            <size>5000 5000</size>
+                        </plane>
+                    </geometry>
+                    <material>
+                        <ambient>0.5 0.5 0.5 1</ambient>
+                        <diffuse>0.6 0.6 0.6 1</diffuse>
+                        <specular>0.3 0.3 0.3 1</specular>
+                        <emissive>0 0 0 1</emissive>
+                    </material>
+                </visual>
+            </link>
+        </model> 
+        <!-- Add a sun with a 60-degree angle -->
+        <model name="sun1">
+            <static>true</static>
+            <pose>0 0 10 0 -150 0</pose>
+            <link name="link">
+                <light name="sun_light" type="directional">
+                    <cast_shadows>false</cast_shadows>
+                    <pose>0 0 10 0 0 0</pose>
+                    <diffuse>204 204 204 255</diffuse>
+                    <specular>51 51 51 255</specular>
+                    <direction>0.5 0.1 -0.9</direction>
+                    <attenuation>
+                        <range>1000</range>
+                        <constant>0.9</constant>
+                        <linear>0.01</linear>
+                        <quadratic>0.000</quadratic>
+                    </attenuation>
+                </light>
+            </link>
+        </model>
+        <model name="sun2">
+            <static>true</static>
+            <pose>0 0 10 0 150 0</pose>
+            <link name="link">
+                <light name="sun_light" type="directional">
+                    <cast_shadows>false</cast_shadows>
+                    <pose>0 0 10 0 0 0</pose>
+                    <diffuse>204 204 204 255</diffuse>
+                    <specular>51 51 51 255</specular>
+                    <direction>0.5 0.1 -0.9</direction>
+                    <attenuation>
+                        <range>1000</range>
+                        <constant>0.9</constant>
+                        <linear>0.01</linear>
+                        <quadratic>0.000</quadratic>
+                    </attenuation>
+                </light>
+            </link>
+        </model>
+    
+    <model name='wood_cube1'>
+      <link name='link'>
+        <pose>0 0 0.0375 0 -0 0</pose>
+        <inertial>
+          <mass>0.200</mass>
+          <inertia>
+            <ixx>0.00014083</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00014083</iyy>
+            <iyz>0</iyz>
+            <izz>0.00014083</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.065 0.065 0.065</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <poissons_ratio>0.347</poissons_ratio>
+              <elastic_modulus>8.8e+09</elastic_modulus>
+              <ode>
+                <kp>100000</kp>
+                <kd>100</kd>
+                <max_vel>100</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <torsional>
+                <coefficient>1</coefficient>
+                <use_patch_radius>0</use_patch_radius>
+                <surface_radius>0.01</surface_radius>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.065 0.065 0.065</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0.3 0.6 1.22 0 -0 0</pose>
+    </model>
+    <model name='wood_cube2'>
+      <link name='link'>
+        <pose>0 0 0.0375 0 -0 0</pose>
+        <inertial>
+          <mass>0.20</mass>
+          <inertia>
+            <ixx>0.00014083</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00014083</iyy>
+            <iyz>0</iyz>
+            <izz>0.00014083</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.065 0.065 0.065</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <poissons_ratio>0.347</poissons_ratio>
+              <elastic_modulus>8.8e+09</elastic_modulus>
+              <ode>
+                <kp>100000</kp>
+                <kd>100</kd>
+                <max_vel>100</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <torsional>
+                <coefficient>1</coefficient>
+                <use_patch_radius>0</use_patch_radius>
+                <surface_radius>0.01</surface_radius>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.065 0.065 0.065</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-0.3 0.5 1.22 0 -0 0</pose>
+    </model>
+    <state world_name='default'>
+      <model name='wood_cube1'>
+        <pose>0.3 0.6 1.22 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0.3 0.6 1.22 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-0 0 -0 0 -0 0</acceleration>
+          <wrench>-0 0 -0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='wood_cube2'>
+        <pose>-0.3 0.5 1.22 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-0.3 0.5 1.22 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+    </state>
+    
+    
+    
+    
+  </world>
+</sdf>
+
+

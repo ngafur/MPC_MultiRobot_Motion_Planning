@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="ur">
+  
+  <link name="world">
+  </link>
+
+  <joint name="world_table1" type="fixed">
+    <parent link="world" />
+    <child link="table1_link" />
+    <axis xyz="1 1 1" />
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 ${pi}"/>
+  </joint>
+
+  <link name="table1_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://ur_e_description/meshes/table/table.stl" scale="1 1 1"/>
+      </geometry>
+    </visual>
+ 
+    <collision>
+      <geometry>
+        <mesh filename="package://ur_e_description/meshes/table/table.stl" scale="1 1 1"/>
+        <!--<mu value="0.5"/>-->
+      </geometry>
+      <!--<contact_coefficient mu="0"  resitution="0"  k_p="0"  k_d="0" />-->
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="10"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
+  </link>
+
+  <gazebo reference="table1_link">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <joint name="world_table2" type="fixed">
+    <parent link="world" />
+    <child link="table2_link" />
+    <axis xyz="1 1 1" />
+    <origin xyz="0.0 0.8 0.0" rpy="0 0 0"/>
+  </joint>
+
+  <link name="table2_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://ur_e_description/meshes/table/table.stl" scale="1 1 1"/>
+      </geometry>
+    </visual>
+ 
+    <collision>
+      <geometry>
+        <mesh filename="package://ur_e_description/meshes/table/table.stl" scale="1 1 1"/>
+        <!--<mu value="0.5"/>-->
+      </geometry>
+      <!--<contact_coefficient mu="0"  resitution="0"  k_p="0"  k_d="0" />-->
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="10"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
+  </link>
+
+  <gazebo reference="table2_link">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <!--  <joint name="world_tisch" type="fixed">
+      <parent link="table_link" />
+      <child link="${prefix}base_link" />
+      <origin xyz="-0.372 -0.372 0.4195" rpy="0 0 0" />
+    <origin xyz="0 0 ${0.890 + 0.105}" rpy="0 0 0" /> 
+  </joint> 
+
+  <xacro:include filename="$(find ur_description)/urdf/environment/legobasemacro.xacro">
+  </xacro:include>
+
+  <xacro:legobasespawn joint="legobasejoint01" link="legobaselink01" xPos="0.0" yPos="-0.372" zPos="0.026" size="0.06" mass="0.03"/> -->
+  
+</robot>
+

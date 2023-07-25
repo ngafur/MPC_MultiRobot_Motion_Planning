@@ -121,7 +121,7 @@ roslaunch ur_e_gazebo ur5e.launch
 ```
 3- **Run the Online trajectory planner using DMPC algorithm for two robots.**
 
-1. First you need to run the following codes on certain environment
+1. First you need to open the right directory
 
 ```bash
 cd ~/kokobot_OS/onlineTrajectoryPlanner

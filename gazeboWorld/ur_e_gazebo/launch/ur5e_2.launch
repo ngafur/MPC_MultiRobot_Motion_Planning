@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="limited" default="false"  doc="If true, limits joint range [-PI, PI] on all joints." />
+  <arg name="paused" default="true" doc="Starts gazebo in paused mode" />
+  <arg name="gui" default="true" doc="Starts gazebo gui" />
+  
+  <!-- startup simulated world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" default="$(find ur_e_gazebo)/launch/eworld.world"/>
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="gui" value="$(arg gui)"/>
+  </include>
+
+  <include file="$(dirname)/2tables.launch"/>
+
+  <group ns="robot1">
+
+	  <!-- send robot urdf to param server -->
+	  <include file="$(find ur_e_description)/launch/ur5e_upload.launch">
+	    <arg name="limited" value="$(arg limited)"/>
+	  </include>
+	  
+	  <!--<include file="$(find ur_e_description)/launch/view_ur5e.launch"/> -->
+
+	  <!-- push robot_description to factory and spawn robot in gazebo -->
+	  <node name="spawn_gazebo_model1" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot1 -y -0.0 -z 1.131 -Y 3.1416" respawn="false" output="screen" />
+
+	  <include file="$(find ur_e_gazebo)/launch/controller_utils.launch"/>
+
+	  <!-- start this controller -->
+	  <rosparam file="$(find ur_e_gazebo)/controller/ur5e_controllers.yaml" command="load"/>
+	  <node name="arm_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn vel_joint_traj_controller" respawn="false" output="screen"/>
+
+	  <!-- load other controllers -->
+	  <node name="ros_control_controller_manager" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" args="load joint_group_vel_controller" />
+
+  	  <!-- load other gripper controller -->
+          <node name="gripper_controller_manager" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" args="spawn gripper_controller" />
+          
+  
+  </group>
+
+
+  <group ns="robot2">
+
+	  <!-- send robot urdf to param server -->
+	  <include file="$(find ur_e_description)/launch/ur5e_upload.launch">
+	    <arg name="limited" value="$(arg limited)"/>
+	  </include>
+
+	  <!-- push robot_description to factory and spawn robot in gazebo -->
+	  <node name="spawn_gazebo_model2" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot2 -y 1.1 -z 1.131 -Y 3.1416 " respawn="false" output="screen" />
+
+	  <include file="$(find ur_e_gazebo)/launch/controller_utils.launch"/>
+
+	  <!-- start this controller -->
+	  <rosparam file="$(find ur_e_gazebo)/controller/ur5e_controllers.yaml" command="load"/>
+	  <node name="arm_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn vel_joint_traj_controller" respawn="false" output="screen"/>
+
+	  <!-- load other controllers -->
+	  <node name="ros_control_controller_manager" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" args="load joint_group_vel_controller" />
+
+  	  <!-- load other gripper controller -->
+    <node name="gripper_controller_manager" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" args="spawn gripper_controller" />
+    
+  <!--    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ur_e_description)/cfg/view_robot.rviz" required="true" output="screen" /> -->
+
+  </group>
+
+
+
+
+</launch>

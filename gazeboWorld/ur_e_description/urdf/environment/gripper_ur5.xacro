@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="ur">
+  <link name="gripper_base_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://ur_e_description/meshes/gripper/2F-85_base.stl" scale="1 1 1"/>
+      </geometry>
+    </visual>
+  <!--
+    <collision>
+      <geometry>
+        <mesh filename="package://ur_description/meshes/gripper/2F-85_base.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+ -->
+    <inertial>
+      <origin xyz="0.001116 0.039052 0.000171" rpy="0 0 0"/>
+      <mass value="0.251"/>
+      <inertia
+        ixx="${700.038*0.000001}" ixy="0.0" ixz="0.0"
+        iyy="${180.714*0.000001}" iyz="0.0"
+        izz="${736.449*0.000001}"/>
+    </inertial>
+  </link>
+
+  <joint name="gripper_wrist_joint" type="fixed">
+    <parent link="${prefix}ee_link" />
+    <child link = "gripper_base_link" />
+    <origin xyz="0 0 0" rpy="0.0 ${pi/2} 0" />
+  </joint>
+
+  <link name="gripper_finger_1">
+    <visual>
+      <geometry>
+        <mesh filename="package://ur_e_description/meshes/gripper/2F-85_finger.stl" scale="1 1 1"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="package://ur_e_description/meshes/gripper/2F-85_finger.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="-0.014102 0.127362  -0.000845" rpy="0 0 0"/>
+      <mass value="0.015"/>
+      <inertia
+        ixx="${251.694*0.000001}" ixy="${28.721*0.000001}" ixz="${0.036*0.000001}"
+        iyy="${4.851 *0.000001}" iyz="${1.237*0.000001}"
+        izz="${255.589 *0.000001}"/>
+    </inertial>
+  </link>
+
+  <joint name="gripper_finger_1_joint" type="prismatic">
+    <parent link="gripper_base_link" />
+    <child link = "gripper_finger_1" />
+    <origin xyz="0 0 0" rpy="0 0.0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-0.034" upper="0"
+             effort="1" velocity="0.5"/>
+  </joint>
+
+  <link name="gripper_finger_2">
+    <visual>
+      <geometry>
+        <mesh filename="package://ur_e_description/meshes/gripper/2F-85_finger.stl" scale="1 1 1"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="package://ur_e_description/meshes/gripper/2F-85_finger.stl" scale="1 1 1"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="-0.014102 0.127362  -0.000845" rpy="0 0 0"/>
+      <mass value="0.015"/>
+      <inertia
+        ixx="${251.694*0.000001}" ixy="${28.721*0.000001}" ixz="${0.036*0.000001}"
+        iyy="${4.851 *0.000001}" iyz="${1.237*0.000001}"
+        izz="${255.589 *0.000001}"/>
+    </inertial>
+  </link>
+
+  <joint name="gripper_finger_2_joint" type="prismatic">
+    <parent link="gripper_base_link" />
+    <child link = "gripper_finger_2" />
+    <origin xyz="0 0 0" rpy="0 0 ${pi}" />
+    <axis xyz="1 0 0" />
+    <limit lower="-0.034" upper="0"
+             effort="1" velocity="0.5"/>
+  </joint>
+  
+  
+</robot>
