@@ -26,6 +26,7 @@ The system possesses the ability to dynamically adapt and adjust trajectories in
    <img alt="control_structure" src="doc/control_structure_2.png" width="60%"/>
 </p>
 
+
 ### Videos
 
 #### Simulation
@@ -35,6 +36,7 @@ The following videos are simulated using gazebo. They represent the case how the
 structure of 2 robots | structure of 3 robots | strucutre of 4 robots
 :-: | :-: | :-:
 <video src="doc/Simulation2Roboter.mp4" controls title="Title"></video> | <video src="doc/Simulation3Roboter.mp4" controls title="Title"></video> | <video src="doc/Simulation4Roboter.mp4" controls title="Title"></video>
+
 
 #### Hannover Messe 2023
 The KoKoBot has participated in the Hannover messe that took place in April 2023 in Hannover, Germany. The following video shows the diassembly process of the 3 trucks with two UR5e robots.
