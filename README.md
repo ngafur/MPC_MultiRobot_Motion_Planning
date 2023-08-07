@@ -91,9 +91,9 @@ In all other cases the packages will have to be build from sources in a Catkin w
 
 ```bash
 # retrieve the sources
-git clone https://github.com/ngafur/kokobot_OS
+git clone https://github.com/ngafur/kokobot_DMPC
 
-sudo mv ~/kokobot_OS/gazeboWorld ~/carkin_ws/src
+sudo mv ~/kokobot_DMPC/gazeboWorld ~/carkin_ws/src
 
 cd ~/catkin_ws
 
@@ -175,16 +175,6 @@ If you are using an Online Trajectory Planner in your published research, kindly
  doi = {10.1109/IROS51168.2021.9636118 }
 }
 ```
-
-```
-@incollection{Gafur.2022,
- author = {Gafur, Nigora and Weber, Leo and Yfantis, Vassilios and Wagner, Achim and Ruskwoski, Martin},
- title = {Dynamic path planning and reactive scheduling for a robotic manipulator using nonlinear model predictive control},
- pages = {604--611},
- year = {2022},
- doi = {10.1109/MED54222.2022.9837147}
-}
-```
 ```
 @article{Gafur.2022b,
  author = {Gafur, Nigora and Kanagalingam, Gajanan and Wagner, Achim and Ruskowski, Martin},
@@ -198,10 +188,20 @@ If you are using an Online Trajectory Planner in your published research, kindly
 }
 ```
 
+## Further work
+
+Additional research and developments based on the implemented algorithm can be accessed through the following links:
+
+1-  Dynamic path planning and reactive scheduling for a robotic manipulator using nonlinear model predictive control
+-  [youtube video](https://www.youtube.com/watch?v=J6H2kAi4zmc&t=52s)
+-  [paper](https://ieeexplore.ieee.org/document/9837147)
+
+2- Human-robot interaction:
+- [youtube video](https://www.youtube.com/watch?v=BUwob-qqShs)
 
 ## License and Disclaimer
 
-Copyright 2023 RPTU.
+Copyright 2023 Nigora Gafur.
 
 Source code is licensed under the MIT License. You may obtain a
 copy of the License at https://opensource.org/license/mit/
