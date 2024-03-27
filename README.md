@@ -33,24 +33,24 @@ This repository contains an implementation of optimal task execution and collisi
 
 The following videos are simulated using the simultion environment Gazebo, illustrating how the algorithm can be scaled to a larger system up to four robots. The videos demonstrate cooperation between the robots performing pick-and-place tasks with seamless coordination and efficiency.
 
-##### The structure comprises two UR3 robots
+##### Simultion setup with two UR3 robots
 <p align="center">
 <img src="doc/Simulation2Roboter.gif" alt="animated" />
 </p>
 
-##### The structure comprises three UR3 robots 
+##### Simulation setup with three UR3 robots 
 <p align="center">
 <img src="doc/Simulation3Roboter.gif" alt="animated" />
 </p>
 
 
-##### The structure comprises four UR3 robots
+##### Simulation setup four UR3 robots
 <p align="center">
 <img src="doc/Simulation4Roboter.gif" alt="animated" />
 </p>
 
 #### Real Hardware
-The successful implementation with real hardware using two UR5e robots demonstrates the algorithm's credibility and practicality, showcasing its ability to efficiently execute the disassembly process of three trucks. cooperation
+The successful implementation with real hardware using two UR5e robots demonstrates the algorithm's credibility and practicality, showcasing its ability to efficiently execute the disassembly process of three trucks in cooperaiton.
 
 <p align="center">
 <img src="doc/Kokobot_demontage_webseite.gif" alt="animated" />
