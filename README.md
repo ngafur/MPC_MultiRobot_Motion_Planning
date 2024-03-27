@@ -83,7 +83,7 @@ pip install numpy==1.25.1
 pip install scipy==1.7.3
 ```
 
-### Building up the gazebo simulation
+### Building up the simulation in Gazebo
 
 The following instructions assume that a [Catkin workspace](https://wiki.ros.org/catkin/Tutorials/create_a_workspace) has been created at `~/catkin_ws` and that the source space is at `~/catkin_ws/src`. Update paths appropriately if they are different on the build machine.
 
@@ -110,7 +110,7 @@ source ~/catkin_ws/devel/setup.bash
 replace $ROS_DISTRO with Noetic, Melodic or kinetic, depending on which ROS version you have installed.
 
 ### Preparing the solver
-The algorithm is using Casadi with ipopt as NLP solver, you need to define the ipopt by youself. Check this [Link](https://coin-or.github.io/Ipopt/OPTIONS.html).
+The optimization problem of DMPC (trajectory planner) is formulated in the Casadi framework and solved using the IPOPT solver. The IPOPT solver can be set up from [Link](https://coin-or.github.io/Ipopt/OPTIONS.html).
 
 
 ## Getting Started
