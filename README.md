@@ -13,10 +13,10 @@
 
 ## Introduction
 
-**KoKoBot** stands for Cooperative and Collaborative Robotplatform.  KoKoBot automates optimal task planning, online trajectory planning, and collision avoidance for robots operating in dynamic surroundings, creating a safe and collaborative workplace for both robots and humans. By embracing KoKoBot, industries can unlock a new level of operational efficiency and safety, enabling optimal task execution, collision-free navigation, and harmonious collaboration between robots and human workers. The integration of the robot operating system (ROS) further enhances KoKoBot’s communication, performance and adaptability.
+**KoKoBot** stands for Cooperative and Collaborative Robotic Platform.  KoKoBot automates optimal task planning, online trajectory planning, and collision avoidance for multiple manipulators sharing a common workspace. The flexibility and online execution of the task and motion planning approach creates a safe and collaborative workplace for both robots and humans. By embracing KoKoBot, industries can unlock a new level of operational efficiency and safety, enabling optimal task execution, collision-free and deadlock-free navigation, and harmonious collaboration between robots and human workers. The integration of the Robot Operating System (ROS) further enhances the system's adaptability.
 
 
-This repository contains an implementation of optimal task execution and collision avoidance using distributed model predictive control (**DMPC**). It ensures efficient trajectory planning and safe navigation for robots by considering their predictive dynamic path with other robot's planned path. Communication between DMPCs is achieved through the Robot Operating System (ROS), enabling coordination among multiple robots.
+This repository contains an implementation of optimal task execution and collision avoidance using distributed model predictive control (**DMPC**). Further, the algorithm ensures efficient trajectory planning and safe navigation of multiple robots, where each robot plans its own trajectory by taking the trajectory of its neighbors into account. Communication between DMPCs is realized by using the Robot Operating System (ROS), enabling coordination among multiple robots.
 
 ### Structure
 **KoKoBot** possesses the ability to dynamically adapt and adjust trajectories in real-time, allowing it to respond effectively to environmental changes and uncertainties. Additionally, the control scheme supports multiple robots, allowing for cooperative operation as depicted in the provided picture. 
@@ -31,7 +31,7 @@ This repository contains an implementation of optimal task execution and collisi
 
 #### Simulation
 
-The following videos are simulated using Gazebo, illustrating how the algorithm can be scaled to a larger system with two additional robots. The videos demonstrate the robots engaging in tasks such as picking, sorting, and placing objects with seamless coordination and efficiency.
+The following videos are simulated using the simultion environment Gazebo, illustrating how the algorithm can be scaled to a larger system up to four robots. The videos demonstrate cooperation between the robots performing pick-and-place tasks with seamless coordination and efficiency.
 
 ##### The structure comprises two UR3 robots
 <p align="center">
@@ -50,7 +50,7 @@ The following videos are simulated using Gazebo, illustrating how the algorithm 
 </p>
 
 #### Real Hardware
-The successful implementation with real hardware using two UR5e robots elevates the algorithm's credibility and practicality, showcasing its ability to execute the disassembly process of three trucks with remarkable precision and efficiency. This validation through real-world application reinforces the algorithm's potential for seamless coordination and opens new possibilities for its integration into various industrial scenarios.
+The successful implementation with real hardware using two UR5e robots demonstrates the algorithm's credibility and practicality, showcasing its ability to efficiently execute the disassembly process of three trucks. cooperation
 
 <p align="center">
 <img src="doc/Kokobot_demontage_webseite.gif" alt="animated" />
